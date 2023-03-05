@@ -1,0 +1,107 @@
+<html>
+<head>
+      <style>
+            #header, #footer {
+                background-color:#FF5F05;
+                padding:15px;
+            }
+
+            #sidebar {
+                float:left;
+                width:33%;
+                background-color:#13294B;
+                padding: 10px;
+            }
+
+            #sidebar ul {
+                list-style-type: none;
+                margin: 0;
+                padding: 0;
+            }
+
+            #sidebar li {
+                padding: 6px;
+                margin-bottom: 10px;
+                background-color: #10A2FF;
+                color: #ffffff;
+            }
+
+            #sidebar li:hover {
+                background-color: #009AFB;
+            }
+
+            #content {
+                width:75%;
+                /*margin from left equal to width of sidebar*/
+                margin-left:25%;
+                padding:10px;
+            }
+
+            #main-body {
+                overflow:auto;
+            }
+
+        </style>
+<script src="index.js"></script>
+</head>
+
+<body>
+<div id="header">
+<h1>University of Illinois - CS437 Spring 2023</h1>
+<h2>Lab2 - IoT Networking</h2>
+<h2>Michael Edukonis<br>
+<a href="mailto:meduk2@illinois.edu" target=0>meduk2@illinois.edu</a><br>
+Date: 3/3/2023</h2>
+
+</div>
+
+<!--My name is: <input id="myName" type="text" placeholder="name"/>
+<button class="btn btn-success" onclick="greeting()">Submit</button><br><br>  -->
+<div id="sidebar">
+ <!-- <span id="greet"> </span>
+<br>
+<span id="greet_from_server"> </span>-->
+<center><h2>Car Control</h2></center>
+<center><button class="btn" onclick="drive('f')">Forward</button><br>
+<button class="btn" onclick="drive('l')">Left</button>
+<button class="btn" onclick="drive('r')">Right</button><br>
+<button class="btn" onclick="drive('b')">Reverse</button>
+<button class="btn" onclick="drive('s')">Stop</button>
+</center>
+
+<br><br><br><br><br><br>
+<div>
+<center><img id="scan_pic" src="http://192.168.1.2/scan_result.jpg" width="350" height="260">
+<center><button class="btn" onclick="update_scan()">Scan</button><br>
+</div>
+
+
+
+</div>
+
+
+<div id="content">
+<center><b>Picam</b></center>
+        <!-- <video class="center" width="600" height="400" controls>
+        <source src="samplevid.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+      </video> -->
+<center><img id="pic" src="http://192.168.1.2/img.jpg" width="640" height="480">
+<center><button class="btn" onclick="update_photo()">Update Photo</button></center>
+</div>
+
+<div id="footer">
+ <!-- <input id="message" type="text" placeholder="message to Pi"/>
+        <button class="btn btn-success" onclick="update_data()">Submit</button> -->
+        <b>Last update: <span id="date"> </span></b><br>
+          <p>
+           <span id="battery_dot" style="color:cornsilk">&bull;</span><b> Battery Level: <span id="battery">0.0</span>v</b>
+           <br>
+           <span id="temprature_dot" style="color:cornsilk">&bull;</span><b> Pi Temperature: <span id="temperature">0.0</span></b>
+           <br>
+           <span id="cpu_dot" style="color:cornsilk">&bull;</span><b> CPU Load: <span id="cpu">0.0</span></b>
+           <!-- Bluetooth return value: <span id="bluetooth"> </span> -->
+          </p>
+</div>
+</body>
+</html>
